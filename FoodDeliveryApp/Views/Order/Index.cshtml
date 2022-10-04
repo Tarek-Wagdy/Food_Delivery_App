@@ -1,0 +1,42 @@
+﻿@using FoodDeliveryApp.ViewModels
+
+@model OrderAndAddressViewModel
+
+<h2 style="text-align:center">Orders</h2>
+<br />
+@*
+    *********************
+    i comment it because filtration not Finished
+    **********************
+*@
+@*<label>fillter by Address :</label> 
+<select id="selectedAddress" onchange="getOrders()">
+    @foreach (var item in Model.addresses)
+    {
+       <option value="@item">@item</option> 
+    }
+</select>
+<br />*@
+<table class="table table-dark">
+    <tr>
+        <th >Id</th>
+        <th>Order-Date</th>
+        <th>Total-Cost</th>
+        <th>Address</th>
+    </tr>
+   @foreach (var item in Model.orders)
+   {
+     <tr>
+         <td >@item.Id</td>
+         <td>@item.OrderDate</td>
+         <td>@item.TotalCost</td>
+         <td>@item.Address</td>
+     </tr>  
+   }
+</table>
+
+
+
+
+
+
